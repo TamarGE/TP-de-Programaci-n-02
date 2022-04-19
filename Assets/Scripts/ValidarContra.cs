@@ -8,9 +8,12 @@ public class ValidarContra : MonoBehaviour
     string contraCorrecta;
     string contraUsuario;
     public Text ingresoUsuario;
+    public GameObject Cartelito;
+    public Text textoMsj;
     void Start()
     {
         contraCorrecta = "12345";
+        Cartelito.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,11 +26,15 @@ public class ValidarContra : MonoBehaviour
         contraUsuario = ingresoUsuario.text;
         if (contraUsuario == contraCorrecta)
         {
-            Debug.Log("Bienvenid@");
+            Cartelito.SetActive(true);
+            textoMsj.text = "Bienvenid@";
+            //Debug.Log("Bienvenid@");
         }
         else
         {
-            Debug.Log("Contraseña incorrecta");
+            Cartelito.SetActive(true);
+            textoMsj.text = "Contraseña incorrecta";
+           //Debug.Log("Contraseña incorrecta");
         }
     }
 }
